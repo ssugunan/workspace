@@ -1,0 +1,18 @@
+package org.sree.messenger.resources;
+import javax.ws.rs.Path;
+import org.sree.messenger.service.MessageService;
+import org.sree.messenger.model.Message;
+import java.util.List;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.GET;
+import javax.ws.rs.Produces;
+@Path("/messages")
+public class MessageResource {
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public List<Message> getMessages(){
+		MessageService ms = new MessageService();
+		return ms.getAllMessages();
+	}
+
+}

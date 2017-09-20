@@ -1,0 +1,21 @@
+
+public class List {
+	
+	
+	int[] arr = new int[10];
+	
+	arr[0]=10;
+	arr[1]=11;
+	
+
+	public static void main(String[] args) {
+		
+	
+		// TODO Auto-generated method stub
+		
+		List myList = new List();
+		System.out.println(myList.arr.length);
+
+	}
+
+}

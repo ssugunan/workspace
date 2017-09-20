@@ -1,0 +1,99 @@
+
+public class MyLinkedList {
+	
+	 Node head;
+	
+	public static class Node{
+		int data;
+		Node next;
+		
+		Node(int d){
+			
+			data=d;
+			next=null;			
+		}
+	}
+	
+	public Node findLastNode()
+	{
+		Node node=head;
+		if(head!=null)
+		{
+			while(node.next!=null)
+			{
+				node=node.next;
+			}
+			return node;
+		}
+		return null;
+	}
+	public void addNode(int d){	
+		if(head==null)
+		{
+			head=new Node(d);
+			head.next=null;
+		}
+		Node newNode =new Node(d);
+		Node lastNode =findLastNode();
+		lastNode.next =newNode;
+				
+	}
+	
+	int detectAndRemoveLoop(Node node) {
+        Node slow = node, fast = node;
+        while (slow != null && fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+ System.out.println("slow is" +slow.data+"fast is" +fast.data);
+            // If slow and fast meet at same point then loop is present
+            if (slow == fast) {
+                //removeLoop(slow, node);
+                return 1;
+            }
+        }
+        return 0;
+    }
+   
+   public void printLinkedList()
+   {
+	   Node node =head;
+	   if(head!=null)
+	   {
+		   while(node.next!=null)
+		   {
+			   System.out.println(node.data);
+		   }
+	   }
+	   
+	   System.out.println("List is Empty");
+   }
+   
+   public void findNodeAt()
+   {
+	   
+   }
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		MyLinkedList list = new MyLinkedList();
+		for(int i=1;i<=20;i++)
+		{
+			list.addNode(i);
+		}
+		list.findLastNode().next=list.head.next.next.next.next.next.next;
+        //list.head = new Node(50);
+       // list.head.next = new Node(20);
+       // list.head.next.next = new Node(15);
+       // list.head.next.next.next = new Node(4);
+       // list.head.next.next.next.next = new Node(10);
+        //System.out.println(head.next.next.next.next.next.data);
+        // Creating a loop for testing 
+       // head.next.next.next.next.next = head.next.next;
+        
+        list.detectAndRemoveLoop(list.head);
+
+	}
+
+}

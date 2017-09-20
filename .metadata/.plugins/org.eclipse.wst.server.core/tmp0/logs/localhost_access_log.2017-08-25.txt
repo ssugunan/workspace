@@ -1,0 +1,7 @@
+127.0.0.1 - - [25/Aug/2017:23:51:39 -0700] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [25/Aug/2017:23:52:32 -0700] "GET /messenger/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [25/Aug/2017:23:52:41 -0700] "GET /messenger/webapi/myresource HTTP/1.1" 200 7
+0:0:0:0:0:0:0:1 - - [25/Aug/2017:23:53:03 -0700] "GET /messenger/webapi/myresource HTTP/1.1" 200 7
+0:0:0:0:0:0:0:1 - - [25/Aug/2017:23:53:05 -0700] "GET /messenger/webapi/myresource HTTP/1.1" 200 7
+0:0:0:0:0:0:0:1 - - [25/Aug/2017:23:53:06 -0700] "GET /messenger/webapi/myresource HTTP/1.1" 200 7
+0:0:0:0:0:0:0:1 - - [25/Aug/2017:23:53:06 -0700] "GET /messenger/webapi/myresource HTTP/1.1" 200 7

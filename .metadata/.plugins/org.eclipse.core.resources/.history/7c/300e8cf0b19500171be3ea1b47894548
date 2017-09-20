@@ -1,0 +1,12 @@
+
+public class TestJoin {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		Thread t =new Thread(()->{Thread.sleep(4000); System.out.println("print"+Thread.currentThread().getId());});
+		Thread t1 =new Thread(()->{System.out.println("print"+Thread.currentThread().getId());});
+		
+	}
+
+}

@@ -1,0 +1,69 @@
+// Java program to demonstrate ListIterator
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.ListIterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class TestArray
+{
+	public static void main(String[] args)
+	{
+		ArrayList<Integer> al = new ArrayList<>();
+		for (int i = 0; i < 10; i++)
+			al.add(i);
+
+		System.out.println(al);
+
+		// at beginning ltr(cursor) will point to
+		// index just before the first element in al
+		ListIterator ltr = al.listIterator();
+
+		// checking the next element availabilty
+		while (ltr.hasNext())
+		{
+			// moving cursor to next element
+			int i = (Integer)ltr.next();
+
+			// getting even elements one by one
+			System.out.print(i + " ");
+
+			// Changing even numbers to odd and
+			// adding modified number again in 
+			// iterator
+			if (i%2==0)
+			{
+				i++; // Change to odd
+				ltr.set(i); // set method to change value
+				ltr.add(i+1); // to add
+			}
+		}
+		System.out.println();
+		al.forEach(System.out::print);
+		System.out.println();
+		al.forEach((item)->{System.out.print(item);});
+		System.out.println();
+		Set<Integer> s =al.stream().collect(Collectors.toSet());
+		s.forEach((e)->{System.out.print(e);});
+		
+		
+		HashMap< String,Integer> hm = 
+				new HashMap< String,Integer>();
+hm.put("a", new Integer(100));
+hm.put("b", new Integer(200));
+hm.put("c", new Integer(300));
+hm.put("d", new Integer(400));
+
+// Returns Set view	 
+ Set<Map.Entry<String,Integer>> st = hm.entrySet(); 
+ for(Entry<String, Integer> e:st)
+ {
+	 System.out.println(e.getKey()+" : "+e.getValue());
+ }
+
+
+	}
+}
